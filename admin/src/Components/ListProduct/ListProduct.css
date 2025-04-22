@@ -1,0 +1,131 @@
+/* General container styling */
+.list-product {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Heading */
+.list-product h1 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Main list header row */
+.listproduct-format-main {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 10px;
+  background: #f8f8f8;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Individual product rows */
+.listproduct-format {
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+.listproduct-format:hover {
+  background: #f0f0f0;
+}
+
+/* Product Image */
+.listproduct-product-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-left: 30px;
+}
+
+/* Remove icon */
+.listproduct-remove-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 50px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.listproduct-remove-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1000px) {
+  .listproduct-product-icon {
+    margin-left: 10px;
+  }
+  .listproduct-remove-icon {
+    margin-left: 20px;
+  }
+}
+@media (max-width: 850px) {
+  .list-product {
+    box-sizing: border-box;
+    width: 98%;
+    height: 100%;
+    padding: 10px 30px;
+    margin: 20px auto;
+  }
+  .listproduct-format-main {
+    padding: 12px 0px;
+    font-size: 10px;
+    color: #454545;
+  }
+  .listproduct-format {
+    font-size: 10px;
+  }
+  .listproduct-product-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .listproduct-remove-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media (max-width: 450px) {
+  #id1{
+    font-size: 8px;
+  }
+  .list-product {
+    padding: 5px 15px;
+    margin: 10px auto;
+  }
+  .listproduct-format-main {
+    padding: 8px 0px;
+    font-size: 10px;
+    color: #454545;
+  }
+  .listproduct-format {
+    font-size: 10px;
+  }
+  .listproduct-product-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .listproduct-remove-icon {
+    width: 18px;
+    height: 18px;
+  }
+  .listproduct-product-icon {
+    margin-right: 8px;
+  }
+  .listproduct-remove-icon {
+    margin-right: 10px;
+  }
+}

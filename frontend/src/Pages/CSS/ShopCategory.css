@@ -1,0 +1,113 @@
+.shopcategory-banner {
+  display: block;
+  margin: 30px auto;
+  width: 88%;
+  height: auto;
+  margin-right: 15px;
+}
+.shopcategory-indexSort {
+  display: flex;
+  margin: 0px 170px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shopcategory-indexSort p span {
+  font-weight: 600;
+}
+.shopcategory-sort {
+  padding: 10px 20px;
+  border-radius: 40px;
+  border: 1px solid #888;
+}
+.shopcategory-products {
+  margin: 20px 170px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 80px;
+}
+.shopcategory-products {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Responsive grid */
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  width: 90%;
+  margin: auto;
+}
+
+.shopcategory-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.cls old_price {
+  color: red;
+}
+
+.shopcategory-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.shopcategory-item img:hover {
+  transform: scale(1.05);
+}
+.shopcategory-loadmore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto;
+  width: 233px;
+  height: 69px;
+  border-radius: 75px;
+  background: #ededed;
+  color: #787878;
+  font-size: 18px;
+  font-weight: 500;
+}
+@media (max-width: 700px) {
+  .shopcategory-indexSort {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 80px;
+  }
+  .shopcategory-sort {
+    display: none;
+  }
+}
+@media (max-width: 520px) {
+  .shopcategory-indexSort {
+    margin: 0px 30px;
+  }
+  .shopcategory-indexSort span p {
+    font-size: 12px;
+  }
+  .shopcategory-sort {
+    display: none;
+    padding: 8px 15px;
+  }
+}
+@media (max-width: 400px) {
+  .shopcategory-indexSort {
+    margin: 0px 10px;
+  }
+  .shopcategory-indexSort span {
+    font-size: 11px;
+  }
+  .shopcategory-indexSort p {
+    font-size: 11px;
+  }
+  .shopcategory-sort {
+    display: none;
+    padding: 5px 10px;
+  }
+}
