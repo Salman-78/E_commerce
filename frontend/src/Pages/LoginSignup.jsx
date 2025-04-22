@@ -2,6 +2,7 @@
 import React from "react";
 import "../Pages/CSS/LoginSignup.css";
 import { useState } from "react";
+import { apiUrl } from "../../client";
 
 const LoginSignup = () => {
   const [state, setState] = useState("Login");
@@ -18,7 +19,7 @@ const LoginSignup = () => {
   const login = async (params) => {
     console.log("login success", formData);
     let responseData;
-    await fetch("http://localhost:3000/login", {
+    await fetch(`${apiUrl}/login`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -39,7 +40,7 @@ const LoginSignup = () => {
   const signup = async (params) => {
     console.log("signup success", formData);
     let responseData;
-    await fetch("http://localhost:3000/signup", {
+    await fetch(`${apiUrl}/signup`, {
       method: "POST",
       headers: {
         Accept: "application/json",

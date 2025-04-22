@@ -31,11 +31,12 @@
 import React, { useEffect, useState } from "react";
 import "./Popular.css";
 import Item from "../Item/Item";
+import { apiUrl } from "../../../client";
 
 const Popular = () => {
   const [popularProducts, setPopularProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/popularinwomen")
+    fetch(`${apiUrl}/popularinwomen`)
       .then((res) => res.json())
       .then((data) => setPopularProducts(data));
   }, []);

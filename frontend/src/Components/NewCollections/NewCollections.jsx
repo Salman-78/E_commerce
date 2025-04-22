@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import "./NewCollections.css";
 import Item from "../Item/Item";
+import { apiUrl } from "../../../client";
 
 const NewCollections = () => {
   const [new_collection, setNew_Collection] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/newcollections")
+    fetch(`${apiUrl}/newcollections`)
       .then((res) => res.json()) // ✅ Call .json() correctly
       .then((data) => {
         if (Array.isArray(data)) { // ✅ Ensure the response is an array

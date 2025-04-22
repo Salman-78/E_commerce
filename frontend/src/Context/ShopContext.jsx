@@ -3,6 +3,7 @@
 /* eslint-disable react/prop-types */
 
 import React, { createContext, useEffect, useState } from "react";
+import { apiUrl } from "../../client";
 
 export const ShopContext = createContext(null);
 const getDefaultCart = () => {
@@ -18,11 +19,11 @@ export const ShopContextProvider = ({ children }) => {
   const [all_product, setAll_Product] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/allproducts")
+    fetch(`${apiUrl}/allproducts`)
       .then((res) => res.json())
       .then((data) => setAll_Product(data));
     if (localStorage.getItem("auth-token")) {
-      fetch("http://localhost:3000/getcart", {
+      fetch(`${apiUrl}/getcart`, {
         method: "POST",
         headers: {
           Accept: "application/form-data",
@@ -39,7 +40,7 @@ export const ShopContextProvider = ({ children }) => {
   const addToCart = (itemId) => {
     setCartItem((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
     if (localStorage.getItem("auth-token")) {
-      fetch("http://localhost:3000/addtocart", {
+      fetch(`${apiUrl}/addtocart`, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -55,7 +56,7 @@ export const ShopContextProvider = ({ children }) => {
   const removeFromCart = (itemId) => {
     setCartItem((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
     if (localStorage.getItem("auth-token")) {
-      fetch("http://localhost:3000/removefromcart", {
+      fetch(`${apiUrl}/removefromcart`, {
         method: "POST",
         headers: {
           Accept: "application/json",
