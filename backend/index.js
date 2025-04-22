@@ -12,8 +12,24 @@ const path = require("path");
 require("dotenv").config();
 
 app.use(express.json());
-app.use(cors({ origin: "*" }));
 
+const allowedOrigins = [
+  process.env.CORSORIGIN,
+  process.env.CORSORIGIN2,
+];
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(null, false);
+      }
+    },
+    credentials: true,
+    maxAge:11600,
+  })
+);
 mongoose
   .connect(
     process.env.MONGO_URI
